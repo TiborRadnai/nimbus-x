@@ -1,0 +1,32 @@
+<div class="modal-container" [ngClass]="{ 'premium': isPremium }">
+      <div class="modal-badge" *ngIf="isPremium">Exclusive</div>
+
+  <button class="close-button" (click)="closeModal()">
+    <span class="material-icons">close</span>
+  </button>
+
+  <div class="image-wrapper">
+    <img [src]="data.imageUrl" alt="{{ data.title }}" class="modal-image" />
+  </div>
+
+  <h2 class="modal-title">{{ data.title }}</h2>
+
+  <!-- 🔸 Részletesebb leírás csak itt -->
+  <p class="modal-description">{{ data.fullDescription }}</p>
+
+  <div class="modal-details">
+    <div class="modal-info">
+      <p><b>Duration:</b>  {{ data.duration }}</p>
+      <p> Altitude:  {{ data.altitude }}</p>
+      <p> Price:  {{ data.price }}</p>
+    </div>
+
+    <div class="modal-action">
+      <button routerLink="/booking" class="book-button">Foglalás</button>
+    </div>
+    
+  </div>
+</div>
+
+
+

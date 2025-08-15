@@ -1,0 +1,42 @@
+.navbar {
+  background-color: #0a0f1c;
+  border-bottom: 2px solid #00ffff33;
+  font-family: 'Orbitron', sans-serif;
+  
+}
+
+.navbar-brand {
+  color: #00ffff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.nav-link {
+  color: #ffffff;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
+  padding-left: 20px !important;
+}
+
+.navbar-brand:hover {
+  color: #00ffff;
+  text-shadow: 0 0 18px #00ffff;
+}
+
+.nav-link:hover {
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff;
+}
+
+.active {
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffdd;
+}
+
+@media (max-width: 993px ) {
+  .nav-link{
+    padding-left: 0 !important;
+    text-align: center;
+  }
+}

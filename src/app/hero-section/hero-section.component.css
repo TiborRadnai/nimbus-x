@@ -1,0 +1,74 @@
+.hero-section {
+  height: 60vh;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 1rem;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 2rem;
+  border-radius: 12px;
+  color: white;
+  text-shadow: 0 0 10px black;
+  animation: fadeIn 2s ease-out forwards;
+  opacity: 0;
+  max-width: 90%;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn-outline-light {
+  border: 2px solid #fff;
+  color: #fff;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  border-color: #00ffff;
+  color: #00ffff;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .overlay {
+    padding: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .overlay h1 {
+    font-size: 1.8rem;
+  }
+
+  .overlay p {
+    font-size: 1rem;
+  }
+
+  .btn-outline-light {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}

@@ -1,0 +1,180 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+}
+
+.modal-container {
+  position: fixed;  
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #121212;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 20px #00ffff;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 90vw;
+  width: 1000px;
+  height: auto;
+  z-index: 1000;
+  color: #ffffff;
+}
+
+@media (max-width:993px) {
+  .modal-container {
+    top: 10%;
+  }
+}
+
+.modal-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.modal-title {
+  color: #00ffff;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.modal-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.modal-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.modal-info p {
+  margin: 0.3rem 0;
+}
+
+.book-button {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.book-button:hover {
+  border-color: #00ffff;
+  color: #00ffff;
+}
+
+.close-button {
+  position: absolute;
+  top: 0.20rem;
+  right: 0.20rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1010;
+}
+
+.close-button .material-icons {
+  font-size: 2rem;
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff;
+  transition: transform 0.2s ease, text-shadow 0.3s ease;
+}
+
+.close-button:hover .material-icons {
+  transform: scale(1.2);
+  text-shadow: 0 0 12px #00ffff;
+}
+
+
+.image-wrapper {
+  position: relative;
+}
+
+.modal-image {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.modal-container.premium {
+  position: fixed;
+  gap: 2rem;
+  background-color: #111;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem; /* 👈 távolság a kártyák között */
+  flex-wrap: wrap;
+  margin-bottom: 4rem;  
+  border: 2px solid gold;
+  box-shadow: 0 0 30px gold;
+}
+
+.modal-container.premium .book-button {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-container.premium .book-button:hover {
+  border-color: gold;
+  color: gold;
+}
+
+.modal-container.premium .modal-title {
+  color: gold;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.modal-container.premium .close-button {
+  position: absolute;
+  top: 0.20rem;
+  right: 0.20rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1010;
+}
+
+.modal-container.premium .close-button .material-icons {
+  font-size: 2rem;
+  color: gold;
+  text-shadow: 0 0 8px gold;
+  transition: transform 0.2s ease, text-shadow 0.3s ease;
+}
+
+.modal-container.premium .close-button:hover .material-icons {
+  transform: scale(1.2);
+  text-shadow: 0 0 12px gold;
+}
+
+.modal-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: gold;
+  color: black;
+  font-weight: bold;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  z-index: 10;
+}

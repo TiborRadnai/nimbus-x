@@ -1,0 +1,31 @@
+<a [href]="link" class="card custom-card mb-5 mx-auto text-decoration-none">
+  <div class="row g-0">
+    <ng-container *ngIf="layout === 'left'; else rightLayout">
+      <div class="col-md-6 image-wrapper">
+        <img [src]="imageUrl" class="img-fluid rounded" [alt]="title">
+      </div>
+      <div class="col-md-6 d-flex align-items-center">
+        <div class="card-body text-light">
+          <h2 class="card-title text-center mb-5">{{ title }}</h2>
+          <p class="card-text">{{ description }}</p>
+          <p class="card-text"><small class="text-muted-alt">{{ subtitle }}</small></p>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-template #rightLayout>
+      <div class="col-md-6 d-flex align-items-center">
+        <div class="card-body text-light">
+          <h2 class="card-title text-center mb-5">{{ title }}</h2>
+          <p class="card-text">{{ description }}</p>
+          <p class="card-text"><small class="text-muted-alt">{{ subtitle }}</small></p>
+        </div>
+      </div>
+      <div class="col-md-6 image-wrapper">
+        <img [src]="imageUrl" class="img-fluid rounded" [alt]="title">
+      </div>
+    </ng-template>
+  </div>
+</a>
+
+

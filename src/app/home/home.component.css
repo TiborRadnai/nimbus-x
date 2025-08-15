@@ -1,0 +1,30 @@
+.testimonial {
+  font-style: italic;
+  text-align: center;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  margin: 5rem auto;
+  max-width: 700px;
+  color: #eee;
+}
+
+.author {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+@media (max-width: 993px) {
+  .testimonial {
+    margin: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+
+
+
+
+
+

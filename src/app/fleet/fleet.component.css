@@ -1,0 +1,73 @@
+.fleet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.fleet-list h2 {
+  font-size: clamp(3rem, 6vw, 8rem);
+  margin: 5rem auto;
+  color: #00ffff;
+  text-decoration: underline;
+
+}
+
+.fleet-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 2rem;
+}
+
+.fleet-image img {
+  max-width: 400px;
+  height: auto;
+  border: 3px solid #00ffff; /* neon-cián */
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fleet-image img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+}
+
+.fleet-description {
+  margin-left: 2rem;
+}
+
+.fleet-description h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.fleet-description p {
+  font-size: 1rem;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .fleet-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fleet-description {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+
+  .fleet-description h3 {
+    font-size: 1.25rem;
+  }
+
+  .fleet-description p {
+    font-size: 0.95rem;
+  }
+
+  .fleet-image img {
+    max-width: 100%;
+  }
+}

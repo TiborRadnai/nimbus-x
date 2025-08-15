@@ -1,0 +1,21 @@
+<app-hero-section
+  [backgroundImage]="'/assets/fleet/fleetHeader.jpg'"
+  [title]="'Experience the beauty of Madeira from the air'"
+  [subtitle]="'Fly over Madeira on spectacular routes — with panoramic views, exclusive aircraft, and a once-in-a-lifetime experience.'"
+  [buttonText]="'Start Your Madeira Journey'"
+  [buttonLink]="'booking'"
+></app-hero-section>
+
+<section class="fleet-list">
+  <h2>Our Fleet</h2>  
+  <div class="fleet-item" *ngFor="let plane of fleet">
+    <div class="fleet-image">
+      <img [src]="plane.image" [alt]="plane.name" />
+    </div>
+    <div class="fleet-description">
+      <h3>{{ plane.name }}</h3>
+      <p>{{ plane.description }}</p>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

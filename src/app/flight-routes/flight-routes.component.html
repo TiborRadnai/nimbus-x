@@ -1,0 +1,120 @@
+<app-hero-section
+  [backgroundImage]="'/assets/routes/flightRoutesHeader.jpg'"
+  [title]="'Experience the beauty of Madeira from the air'"
+  [subtitle]="'Fly over Madeira on spectacular routes — with panoramic views, exclusive aircraft, and a once-in-a-lifetime experience.'"
+  [buttonText]="'Start Your Madeira Journey'"
+  [buttonLink]="'booking'" 
+></app-hero-section>
+
+<section class="route-list">
+  <h2>Flight Routes</h2>  
+  <app-route-card
+    [title]="'Porto Santo Shuttle'"
+    [description]="'Hop on a scenic flight to Porto Santo and spend the day on its golden sandy beaches. 6 daily departures — perfect for sunseekers and explorers.'"
+    [fullDescription]="'This scenic shuttle flight takes you over the turquoise waters between Madeira and Porto Santo. Enjoy breathtaking aerial views before landing on the islands famous golden beaches. Ideal for a relaxing day trip or a spontaneous escape.'"    
+    [imageUrl]="'/assets/routes/portoSantoShuttle.jpg'"
+    [duration]="'25 min'"
+    [attractions]="'Porto Santo'"
+    [altitude]="'5,000 ft'"
+    [price]="'From €59 p.p.'"
+    [reverse]="false"
+  ></app-route-card>
+
+  <app-route-card
+    [title]="'Northern Cliffs & Coves'"
+    [description]="'A 40-minute flight tracing Madeiras rugged northern coastline.'"
+    [fullDescription]="'This scenic shuttle flight takes you over the turquoise waters between Madeira and Porto Santo. Enjoy breathtaking aerial views before landing on the islands famous golden beaches. Ideal for a relaxing day trip or a spontaneous escape.'"
+    [imageUrl]="'/assets/routes/northExplorer.jpg'"
+    [duration]="'40 min'"
+    [attractions]="'Machico - Santana - Pico Ruivo - Encumeada - Paul da Serra - Fanal - Porto Moniz - Seixal - Sao Vicente - Sao Jorge - Porto da Cruz - Ponta de Sao Lourenco - Airport - Santa Cruz'"
+    [altitude]="'3,000 - 6,000 ft'"
+    [price]="'From €89 p.p.'"    
+    [reverse]="false"
+  ></app-route-card>
+
+  <app-route-card
+    [title]="'Southern Shores Glide'"
+    [description]="'An evening flight over the western highlands.'"
+    [fullDescription]="'This scenic shuttle flight takes you over the turquoise waters between Madeira and Porto Santo. Enjoy breathtaking aerial views before landing on the islands famous golden beaches. Ideal for a relaxing day trip or a spontaneous escape.'"
+    [imageUrl]="'/assets/routes/southExplorer.jpg'"
+    [duration]="'50 min'"
+    [attractions]="'Machico - Camacha - Funchal (Monte) - Paul da Serra - Ponta do Pargo - Jardim do Mar - Calheta - Ponta do Sol - Cabo Girao - Camara de Lobos - Funchal - Cristo Rei - Santa Cruz'"
+    [altitude]="'3,000 ft'"
+    [price]="'From €99 p.p.'"
+    [reverse]="true"
+  ></app-route-card>
+
+  <app-route-card
+    [title]="'Funchal by Night'"
+    [description]="'A 35-minute flight tracing Madeiras rugged northern coastline.'"
+    [fullDescription]="'This scenic shuttle flight takes you over the turquoise waters between Madeira and Porto Santo. Enjoy breathtaking aerial views before landing on the islands famous golden beaches. Ideal for a relaxing day trip or a spontaneous escape.'"
+    [imageUrl]="'/assets/routes/nightFlightFunchal.jpg'"
+    [duration]="'35 min'"
+    [attractions]="'Airport - Eastern Coast - Funchal - Santa Cruz'"
+    [altitude]="'3,000 - 4,000 ft'"
+    [price]="'€139 p.p.'"
+    [reverse]="false"
+  ></app-route-card>
+
+  <app-route-card
+    [title]="'Desertas Island Escape'"
+    [description]="'An evening flight over the western highlands.'"
+    [fullDescription]="'This scenic shuttle flight takes you over the turquoise waters between Madeira and Porto Santo. Enjoy breathtaking aerial views before landing on the islands famous golden beaches. Ideal for a relaxing day trip or a spontaneous escape.'"
+    [imageUrl]="'/assets/routes/desertas.jpg'"
+    [duration]="'30 min'"
+    [attractions]="'Ponta de Sao Lourenco - Desertas - Santa Cruz'"
+    [altitude]="'3,000 ft'"
+    [price]="'€349'"
+    [reverse]="true"
+  ></app-route-card>
+
+  <app-route-card
+    [title]="'Porto Santo Horizon'"
+    [description]="'An evening flight over the western highlands.'"
+    [fullDescription]="'This scenic shuttle flight takes you over the turquoise waters between Madeira and Porto Santo. Enjoy breathtaking aerial views before landing on the islands famous golden beaches. Ideal for a relaxing day trip or a spontaneous escape.'"
+    [imageUrl]="'/assets/routes/portoSanto.jpg'"
+    [duration]="'30 min'"
+    [attractions]="'Porto Santo'"
+    [altitude]="'5,000 ft'"
+    [price]="'€349'"
+    [reverse]="true"
+  ></app-route-card>
+
+  <app-route-card
+    [title]="'Golden Hour Over Madeira'"
+    [description]="'An evening flight over the western highlands.'"
+    [fullDescription]="'This scenic shuttle flight takes you over the turquoise waters between Madeira and Porto Santo. Enjoy breathtaking aerial views before landing on the islands famous golden beaches. Ideal for a relaxing day trip or a spontaneous escape.'"
+    [imageUrl]="'/assets/routes/sunsetFlight.jpg'"
+    [duration]="'30 min'"
+    [attractions]="'Ponta de Sao Lourenco - Pico do Areeiro - Paul da Serra - Ponta do Pargo - Southert Coast - Funchal - Santa Cruz'"
+    [altitude]="'3,000 ft'"
+    [price]="'€349'"
+    [reverse]="true"
+  ></app-route-card>
+  
+  <app-route-card
+    [title]="'Skyfall Madeira — Parachute Experience'"
+    [description]="'Take the leap from 10,000 ft above the Atlantic. Tandem jumps available with certified instructors. Not for the faint-hearted.'"
+    [fullDescription]="'This scenic shuttle flight takes you over the turquoise waters between Madeira and Porto Santo. Enjoy breathtaking aerial views before landing on the islands famous golden beaches. Ideal for a relaxing day trip or a spontaneous escape.'"
+    [imageUrl]="'/assets/routes/tandemJump.jpg'"
+    [duration]="'Flight: 15 min, Jump: 1 min freefall'"
+    [attractions]="'Panoramic views of all Madeira.'"
+    [altitude]="'10,000 ft'"
+    [price]="'€299'"
+    [reverse]="true"
+  ></app-route-card>
+  
+  <app-route-card
+    [title]="'Madeira 360° Aerial Tour'"
+    [description]="'The ultimate aerial experience — a full-circle tour around Madeira with breathtaking views and exclusive service.'"
+    [fullDescription]="'This scenic shuttle flight takes you over the turquoise waters between Madeira and Porto Santo. Enjoy breathtaking aerial views before landing on the islands famous golden beaches. Ideal for a relaxing day trip or a spontaneous escape.'"
+    [imageUrl]="'/assets/routes/madeira360.jpg'"
+    [duration]="'60 min'"
+    [attractions]="'Cristo Rei - Funchal- Cabo Girao - Ribeira Brava - Encumeada - Ponta Delgada - Sao Vicente - Seixal - Porto Moniz - Achadas da Cruz - Ponta do Pargo - Fanal - Rabacal- Curral das Freiras - Pico do Areeiro - Pico Ruivo - Santana - Porto da Cruz - Machico - Ponta de Sao Lourenco - Airport - Santa Cruz'"
+    [altitude]="'2,000 - 9,000 ft'"
+    [price]="'€349'"
+    [premium]="true"
+  ></app-route-card>
+</section>
+<app-footer></app-footer>
+

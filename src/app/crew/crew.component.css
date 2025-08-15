@@ -1,0 +1,120 @@
+.leadership-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: #1a1a1a;
+  border: 2px solid gold;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+}
+
+.leader-card {
+  flex: 1 1 300px;
+  max-width: 400px;
+  background-color: #111;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.leader-photo {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.leader-info h3 {
+  color: gold;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.leader-role {
+  font-weight: bold;
+  color: #ffd700;
+  margin-bottom: 1rem;
+}
+
+.leader-description {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+
+
+.crew-section {
+  padding: 2rem;
+  text-align: center;
+  color: #eee;
+}
+
+.crew-section h2 {
+  font-size: clamp(3rem, 6vw, 8rem);
+  margin: 5rem auto;
+  color: #00ffff;
+  text-decoration: underline;
+  
+}
+
+.crew-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.crew-card {
+  background-color: #111;
+  border: 2px solid #00ffff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.crew-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+}
+
+.crew-photo {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.crew-info h3 {
+  margin: 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+.crew-role {
+  font-weight: bold;
+  color: #00ffff;
+  margin-bottom: 0.5rem;
+}
+
+.crew-description {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.highlight {
+  border-color: gold;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+  background: linear-gradient(145deg, #222, #111);
+}
+
+.highlight h3 {
+  color: gold;
+}
+
+.highlight .crew-role {
+  color: #ffd700;
+}

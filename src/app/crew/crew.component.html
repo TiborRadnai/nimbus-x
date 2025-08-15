@@ -1,0 +1,52 @@
+<app-hero-section
+  [backgroundImage]="'/assets/crew/crewHeader.jpg'"
+  [title]="'Experience the beauty of Madeira from the air'"
+  [subtitle]="'Fly over Madeira on spectacular routes — with panoramic views, exclusive aircraft, and a once-in-a-lifetime experience.'"
+  [buttonText]="'Start Your Madeira Journey'"
+  [buttonLink]="'booking'"
+></app-hero-section>
+
+<section class="crew-section">
+  <h2>Meet Our Team</h2>
+
+  <!-- Leadership Spotlight -->
+  <div class="leadership-grid">
+    <div class="leader-card">
+      <img src="/assets/crew/SeanGuzman.jpg" alt="Sean Guzman" class="leader-photo" />
+      <div class="leader-info">
+        <h3>Sean Guzman</h3>
+        <p class="leader-role">Founder & Chief Pilot</p>
+        <p class="leader-description">
+          French national and founder of the company, Sean lives on the island of Madeira and brings global perspective to everything we do. As a Boeing 737-900 captain at TUI Deutschland, he combines leadership in the skies with entrepreneurial vision on the ground. His passion for aviation and adventure laid the foundation for this unique experience.
+        </p>
+      </div>
+    </div>
+
+    <div class="leader-card">
+      <img src="/assets/crew/EddyHamilton.jpg" alt="Eddy Hamilton" class="leader-photo" />
+      <div class="leader-info">
+        <h3>Eddy Hamilton</h3>
+        <p class="leader-role">Operations Director & Pilot</p>
+        <p class="leader-description">
+          With French roots and a hotel in Paris, Eddy is our Operations Director — the strategic mind behind flight logistics and adventure planning. He ensures everything runs smoothly, from aircraft readiness to guest experience, combining precision with a passion for aviation.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rest of the team -->
+  <div class="crew-grid" *ngIf="team.length > 0">
+    <div class="crew-card" 
+         *ngFor="let member of team">
+      <img [src]="member.image" [alt]="member.name" class="crew-photo" />
+      <div class="crew-info">
+        <h3>{{ member.name }}</h3>
+        <p class="crew-role">{{ member.role }}</p>
+        <p class="crew-description">{{ member.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>
+
+

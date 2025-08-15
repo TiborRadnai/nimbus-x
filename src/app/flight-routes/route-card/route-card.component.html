@@ -1,0 +1,21 @@
+<div class="route-card" [class.premium]="premium" (click)="openDetails()">
+  <div class="image-container">
+    <img [src]="imageUrl" [alt]="title" />
+  </div>
+  <div class="text-container">
+    <h3>{{ title }}</h3>
+    <p class="description">{{ description }}</p>
+    <ul class="details">
+      <li><strong class="text-white">Duration: </strong> {{ duration }}</li>
+      <li><strong class="text-white">Attractions: </strong> {{ attractions }}</li>
+      <li><strong class="text-white">Altitude: </strong> {{ altitude }}</li>
+      <li><strong class="text-white">Price: </strong> <span class="price">{{ price }}</span></li>      
+    </ul>
+    <div class="badge" *ngIf="premium">Exclusive</div>
+  </div>
+</div>
+
+
+
+
+

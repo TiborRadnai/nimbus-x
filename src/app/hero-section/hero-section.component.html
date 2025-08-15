@@ -1,0 +1,13 @@
+<section
+  class="hero-section"
+  [ngStyle]="{ 'background-image': 'url(' + backgroundImage + ')' }"
+>
+  <div class="overlay">
+    <h1>{{ title }}</h1>
+    <p>{{ subtitle }}</p>
+    <a [href]="buttonLink" class="btn btn-outline-light mt-3">
+      {{ buttonText }}
+    </a>
+  </div>
+</section>
+

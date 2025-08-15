@@ -1,0 +1,166 @@
+section.route-list {
+    margin-top: 100px !important;
+}
+
+.route-card {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  background-color: #111;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem; /* 👈 távolság a kártyák között */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  border: 1px solid #333;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.custom-card {
+  max-width: 90%;
+  background-color: #111;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 50px;
+}
+
+.route-card:hover .text-container {
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff66;
+  }
+  50% {
+    box-shadow: 0 0 30px #00ffff, 0 0 60px #00ffff99;
+  }
+  100% {
+    box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff66;
+  }
+}
+
+.route-card:hover {
+  animation: pulse 1.5s infinite;
+}
+
+.route-card.premium {
+  margin-bottom: 4rem;  
+  border: 2px solid gold;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+.route-card.premium h3 {
+  color: gold;
+}
+
+.route-card.premium:hover .text-container {
+  color: gold;
+  text-shadow: 0 0 8px gold;
+}
+
+@keyframes breath  {
+  0% {
+    box-shadow: 0 0 20px gold, 0 0 40px #00ffff66;
+  }
+  50% {
+    box-shadow: 0 0 30px gold, 0 0 60px #00ffff99;
+  }
+  100% {
+    box-shadow: 0 0 20px gold, 0 0 40px #00ffff66;
+  }
+}
+
+.route-card.premium:hover {
+  animation: breath  1.5s infinite;
+}
+
+.badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: gold;
+  color: #000;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+
+.image-container {
+  flex: 1 1 300px;
+  max-width: 500px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.text-container {
+  flex: 2 1 400px;
+  color: #eee;
+}
+
+.text-container h3 {
+  font-size: 1.8rem;
+  color: #00ffff;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.details {
+  list-style: none;
+  padding: 0;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.details li {
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+.route-card.premium .price {
+  color: gold;
+}
+
+
+/* ✅ Mobilbarát elrendezés */
+@media (max-width: 768px) {
+  .route-card {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .image-container,
+  .text-container {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .text-container h3 {
+    font-size: 1.5rem;
+  }
+}
+
+
