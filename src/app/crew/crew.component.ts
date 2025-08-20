@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeroSectionComponent } from '../hero-section/hero-section.component'; // 👈 ez kell!
+import { PageTitleComponent } from '../page-title/page-title.component'; // 👈 ez kell!
 import { FooterComponent } from '../footer/footer.component';
 
 
 @Component({
   selector: 'app-crew',
   standalone: true,  
-  imports: [HeroSectionComponent, CommonModule, FooterComponent],
+  imports: [HeroSectionComponent, PageTitleComponent, CommonModule, FooterComponent],
   templateUrl: './crew.component.html',
   styleUrl: './crew.component.css'
 })
@@ -22,7 +23,7 @@ export class CrewComponent {
       name: 'Andreas Marthaler',
       role: 'Pilot',
       image: '/assets/crew/AndreasMarthaler.jpg',
-      description: 'Senior pilot with decades of experience. Former Airbus A321 captain at Austrian Airlines. At our company, he primarily flies the "Big Girl" and the "Jumper" aircraft with unmatched precision and calm authority.'    },
+      description: 'Senior pilot with decades of experience. Former Airbus A321 captain at Austrian Airlines. At our company, he primarily flies the Big Girl (Jumper) aircraft with unmatched precision and calm authority.'    },
     {
       name: 'Eva Claire Marseille',
       role: 'Pilot',

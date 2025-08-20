@@ -11,7 +11,7 @@
 
 .modal-container {
   position: fixed;  
-  top: 5%;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   background-color: #121212;
@@ -20,10 +20,13 @@
   border-radius: 12px;
   padding: 2rem;
   max-width: 90vw;
-  width: 1000px;
+  width: 1300px;
   height: auto;
   z-index: 1000;
   color: #ffffff;
+  max-height: 95vh; /* vagy 90vh, ahogy kényelmes */
+  overflow-y: auto;
+  padding-right: 1rem; /* hogy ne vágja le a scrollbar */
 }
 
 @media (max-width:993px) {
@@ -36,6 +39,7 @@
   width: 100%;
   border-radius: 8px;
   margin-bottom: 1rem;
+  display: block;
 }
 
 .modal-title {
@@ -102,12 +106,6 @@
 
 .image-wrapper {
   position: relative;
-}
-
-.modal-image {
-  width: 100%;
-  border-radius: 8px;
-  display: block;
 }
 
 .modal-container.premium {

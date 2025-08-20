@@ -1,14 +1,14 @@
 <app-hero-section
   [backgroundImage]="'/assets/crew/crewHeader.jpg'"
-  [title]="'Experience the beauty of Madeira from the air'"
-  [subtitle]="'Fly over Madeira on spectacular routes — with panoramic views, exclusive aircraft, and a once-in-a-lifetime experience.'"
-  [buttonText]="'Start Your Madeira Journey'"
-  [buttonLink]="'booking'"
+  [title]="'The people behind the flight'"
+  [subtitle]="'Experienced pilots, passionate crew, and warm hospitality.'"
+  [buttonText]="''"
+  [buttonLink]="''"
 ></app-hero-section>
 
-<section class="crew-section">
-  <h2>Meet Our Team</h2>
+<app-page-title title="Meet Our Team"></app-page-title>
 
+<section class="crew-section">
   <!-- Leadership Spotlight -->
   <div class="leadership-grid">
     <div class="leader-card">
@@ -47,6 +47,45 @@
     </div>
   </div>
 </section>
+<section class="contact-wrapper">
+  <!-- Form Section -->
+  <div class="contact-form-section">
+    <h2>Send Us a Message</h2>
+    <form class="contact-form">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="contact-button">Send Message</button>
+    </form>
+  </div>
+
+  <!-- Info Section -->
+  <div class="contact-info-section">
+    <h2>Contact Details</h2>
+    <p class="contact-text">
+      Reach out directly to our team for personalized assistance. Whether you're planning a flight or just curious, we're here to help.
+    </p>
+    <ul class="contact-list">
+      <li><strong>Contact Person:</strong> Jacqueline Hamilton</li>
+      <li><strong>Phone:</strong> +351 927 654 321</li>
+      <li><strong>Email:</strong> info@nimbus-x.com</li>
+      <li><strong>Address:</strong> Parque Desportivo, 9200-202 Machico, Madeira</li>
+    </ul>
+  </div>
+</section>
+
 <app-footer></app-footer>
 
 

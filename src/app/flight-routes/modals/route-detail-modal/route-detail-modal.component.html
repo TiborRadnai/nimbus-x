@@ -12,7 +12,7 @@
   <h2 class="modal-title">{{ data.title }}</h2>
 
   <!-- 🔸 Részletesebb leírás csak itt -->
-  <p class="modal-description">{{ data.fullDescription }}</p>
+<p [innerHTML]="data.fullDescription"></p>
 
   <div class="modal-details">
     <div class="modal-info">
@@ -22,7 +22,7 @@
     </div>
 
     <div class="modal-action">
-      <button routerLink="/booking" class="book-button">Foglalás</button>
+      <button (click)="navigateToBooking()" class="book-button">Booking</button>
     </div>
     
   </div>

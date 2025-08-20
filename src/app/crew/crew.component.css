@@ -53,14 +53,6 @@
   color: #eee;
 }
 
-.crew-section h2 {
-  font-size: clamp(3rem, 6vw, 8rem);
-  margin: 5rem auto;
-  color: #00ffff;
-  text-decoration: underline;
-  
-}
-
 .crew-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -117,4 +109,130 @@
 
 .highlight .crew-role {
   color: #ffd700;
+}
+
+.contact-wrapper {
+  border-radius: 12px;  
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+  align-items: stretch;
+  background-color: #1a1a1a;
+}
+
+
+.contact-form-section,
+.contact-info-section {
+  flex: 1 1 400px;
+  min-width: 0;
+  background-color: #111;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+  border: 2px solid gold;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 👈 segít a belső elrendezésben */
+}
+
+.contact-form-section h2,
+.contact-info-section h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #00ffff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.contact-form {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #00ffff;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 2px solid #00ffff;
+  background-color: #111;
+  color: #eee;
+  font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: gold;
+}
+
+.contact-button {
+  margin-top: auto;
+  background-color: #00ffff;
+  color: #111;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: block;
+}
+
+.contact-button:hover {
+  background-color: gold;
+  transform: translateY(-3px);
+}
+
+.contact-text {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  font-size: 0.95rem;
+  color: #eee;
+}
+
+.contact-list li {
+  margin-bottom: 0.75rem;
+}
+
+.contact-list strong {
+  color: #00ffff;
+}
+
+@media (min-width: 1200px) {
+  .contact-wrapper {
+    max-width: 95vw; /* 👈 közel teljes képernyő szélesség */
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+  }
 }

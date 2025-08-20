@@ -1,0 +1,110 @@
+/* Alap stílus */
+.flight-table {
+  font-size: 1rem;
+}
+
+/* Mobilon kisebb betűméret és szabad helyek elrejtése */
+@media (max-width: 768px) {
+  .flight-table {
+    font-size: 0.6rem;
+  }
+
+  .seats-header,
+  .seats-cell {
+    display: none;
+  }
+
+  .neon-box {
+    padding: 1rem;
+  }
+}
+
+.booking-section {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.neon-box {
+  width: 100%;
+  max-width: 1200px;
+  border: 2px solid #00ffff;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+  padding: 2rem;
+  background-color: #111;
+}
+
+.booking-section h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: gold;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.schedule-card {
+  background-color: #111;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 3rem;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  border: 2px solid #00ffff;
+}
+
+.schedule-card h3 {
+  color: #00ffff;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 2px solid #00ffff;
+  background-color: #111;
+  color: #eee;
+  font-size: 1rem;
+}
+
+.booking-alert {
+  background-color: #222;
+  border: 2px solid gold;
+  border-radius: 8px;
+  padding: 1rem;
+  color: #ffd700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.booking-button {
+  background-color: #00ffff;
+  color: #111;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  align-self: center;
+}
+
+.booking-button:hover {
+  background-color: gold;
+  transform: translateY(-3px);
+}

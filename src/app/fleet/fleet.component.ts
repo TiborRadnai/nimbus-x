@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { HeroSectionComponent } from '../hero-section/hero-section.component'; // 👈 ez kell!
 import { CommonModule } from '@angular/common';
+import { PageTitleComponent } from '../page-title/page-title.component';
 import { FooterComponent } from '../footer/footer.component';
 
 
 @Component({
   selector: 'app-fleet',
   standalone: true,  
-  imports: [HeroSectionComponent, CommonModule, FooterComponent],
+  imports: [HeroSectionComponent, PageTitleComponent, CommonModule, FooterComponent],
   templateUrl: './fleet.component.html',
   styleUrl: './fleet.component.css'
 })
