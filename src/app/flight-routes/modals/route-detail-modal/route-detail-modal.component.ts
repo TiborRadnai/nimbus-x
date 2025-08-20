@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-route-detail-modal',
@@ -13,9 +14,23 @@ import { RouterModule } from '@angular/router';
 export class RouteDetailModalComponent {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private dialogRef: MatDialogRef<RouteDetailModalComponent>
+    private dialogRef: MatDialogRef<RouteDetailModalComponent>,
+    private router: Router
   ) {}
-  
+
+  slugify(title: string): string {
+    return title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  }
+
+  navigateToBooking(): void {
+    const routeSlug = this.slugify(this.data.title);
+    this.dialogRef.close();
+    this.router.navigate(['/booking'], { queryParams: { route: routeSlug } });
+  }
+
   get isPremium(): boolean {
     return this.data.premium;
   }
@@ -24,6 +39,7 @@ export class RouteDetailModalComponent {
     this.dialogRef.close();
   }
 }
+
 
 
 

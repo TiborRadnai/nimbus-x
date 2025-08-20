@@ -1,0 +1,8 @@
+.page-title {
+  font-size: clamp(3rem, 6vw, 8rem);
+  margin: 5rem auto;
+  color: #00ffff; /* cián-neon stílushoz illeszkedve */
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  text-decoration: underline;
+  text-align: center;
+}

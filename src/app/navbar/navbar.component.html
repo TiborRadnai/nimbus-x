@@ -1,22 +1,22 @@
 <nav class="navbar navbar-dark bg-dark navbar-expand-lg sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/" routerLinkActive="active">Nimbus X</a>
+    <a class="navbar-brand" routerLink="/" routerLinkActive="active" (click)="closeMenu(navbarNav)">Nimbus X</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse" id="navbarNav" #navbarNav>
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link text-light" routerLink="/routes" routerLinkActive="active">Flight Routes</a>
+          <a class="nav-link text-light" routerLink="/routes" routerLinkActive="active" (click)="closeMenu(navbarNav)">Flight Routes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" routerLink="/booking" routerLinkActive="active">Book a Flight</a>
+          <a class="nav-link text-light" routerLink="/booking" routerLinkActive="active" (click)="closeMenu(navbarNav)">Book a Flight</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" routerLink="/fleet" routerLinkActive="active">Our Fleet</a>
+          <a class="nav-link text-light" routerLink="/fleet" routerLinkActive="active" (click)="closeMenu(navbarNav)">Our Fleet</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" routerLink="/crew" routerLinkActive="active">Meet Our Team</a>
+          <a class="nav-link text-light" routerLink="/crew" routerLinkActive="active" (click)="closeMenu(navbarNav)">Meet Our Team</a>
         </li>
       </ul>
     </div>

@@ -4,8 +4,8 @@
 >
   <div class="overlay">
     <h1>{{ title }}</h1>
-    <p>{{ subtitle }}</p>
-    <a [href]="buttonLink" class="btn btn-outline-light mt-3">
+    <p *ngIf="subtitle">{{ subtitle }}</p>
+    <a *ngIf="buttonText && buttonLink" [href]="buttonLink" class="btn btn-outline-light mt-3">
       {{ buttonText }}
     </a>
   </div>

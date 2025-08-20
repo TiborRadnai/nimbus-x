@@ -1,0 +1,216 @@
+<app-hero-section
+  [backgroundImage]="'/assets/bookAFlightHeader.jpg'"
+  [title]="'Your journey starts here '"
+  [subtitle]="'Choose your route, pick a date, and get ready to soar.'"
+  [buttonText]="''"
+  [buttonLink]="''"
+></app-hero-section>
+
+<app-page-title title="Book Your Flight"></app-page-title>
+
+<section class="booking-section">
+  <!-- Porto Santo Shuttle Menetrend -->
+  <div class="schedule-card neon-box mb-5">
+    <h2 class="text-center mb-4">Porto Santo Shuttle Schedule</h2>    
+    <div class="table-responsive">
+      <table class="table table-bordered table-dark table-striped flight-table">        
+        <thead>
+          <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Departure</th>
+            <th>Arrival</th>
+            <th class="seats-header">Available Seats</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let flight of flightScheduleWithSeats">
+            <td>{{ flight.from }}</td>
+            <td>{{ flight.to }}</td>
+            <td>{{ flight.departure }}</td>
+            <td>{{ flight.arrival }}</td>
+            <td class="seats-cell">{{ flight.availableSeats }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Booking Form -->
+  <form class="booking-form neon-box" id="formTop">
+    <h2 class="text-center mb-4">Book Your Flight</h2>    
+
+    <!-- Route (dropdown) -->
+    <div class="form-group">
+      <label for="route">Selected Route</label>
+      <select
+        id="route"
+        name="route"
+        [(ngModel)]="selectedRouteId"
+        (change)="onRouteChange()"
+        class="form-control"
+        required
+      >
+        <option value="">Choose your flight!</option>
+        <option *ngFor="let route of routesList" [value]="route.id">{{ route.name }}</option>
+      </select>
+    </div>
+
+    <!-- Passengers -->
+    <div class="form-group">
+      <label for="passengerCount">Number of Passengers</label>
+      <select
+        id="passengerCount"
+        name="passengerCount"
+        [(ngModel)]="passengerCount"
+        [disabled]="!selectedRoute"
+        class="form-control"
+        required
+      >
+        <option *ngIf="!selectedRoute" disabled selected>
+          Please select a route first
+        </option>
+        <option *ngFor="let option of passengerOptions" [value]="option">
+          {{ option }}
+        </option>
+      </select>
+    </div>
+    
+    <!-- Date -->
+    <div class="form-group">
+      <label for="date">Select Date</label>
+      <input type="date" id="date" name="date" class="form-control" required />
+    </div>
+
+    <!-- Time -->
+    <div class="form-group">
+      <label for="time">Select Time</label>
+      <select id="time" name="time" class="form-control" required>
+        <option value="">-- Choose a time --</option>
+        <option *ngFor="let slot of availableTimeSlots" [value]="slot">{{ slot }}</option>
+      </select>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="form-group">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Your Phone</label>
+      <input type="tel" id="phone" name="phone" class="form-control" required />
+    </div>
+
+    <button type="submit" class="booking-button">Book Now</button>
+  </form>
+</section>
+
+<section class="booking-section my-5">
+  <div class="neon-box">
+    <h2>Everything You Need to Know</h2>
+
+    <!-- Info blocks -->
+    <div class="schedule-card">
+      <h3>Porto Santo Shuttle – Daily Departures</h3>
+      <p>
+        Our <strong>Porto Santo Shuttle</strong> operates <strong>7 times daily</strong>, both to and from the island. 
+        All departure times are fixed and carefully scheduled.
+      </p>
+      <p>
+        In case of <strong>adverse weather conditions</strong>, we may adjust the timetable or cancel flights entirely. 
+        If you have a booking, you will be <strong>notified immediately</strong> of any changes.
+      </p>
+    </div>
+
+    <div class="schedule-card">
+      <h3>Scenic Flights – Fly with a View</h3>
+      <p>
+        Our aircrafts accommodate <strong>up to 3 passengers</strong>, all seated by the window for optimal views. 
+        For seat recommendations, feel free to ask your pilot!
+      </p>
+      <p>
+        Before each flight, guests receive a <strong>comprehensive briefing</strong> at our Machico center. 
+        Safety instructions given here <strong>must be followed</strong>.
+      </p>
+      <p>
+        You'll learn about the flight route and key landmarks. 
+        <strong>Unlimited snacks and non-alcoholic drinks</strong> are available.
+      </p>
+      <p>
+        Transfer from Machico to the Nimbus-X airfield is <strong>included in the price</strong>. 
+        Please respect the airport’s <strong>strict security regulations</strong>.
+      </p>
+      <p>
+        During the flight, your pilot will provide live commentary on the sights below.
+      </p>
+    </div>
+
+    <div class="schedule-card">
+      <h3>Tandem Skydiving – Leap into Adventure</h3>
+      <p>
+        Want to jump solo? You’ll need <strong>official certification</strong>. 
+        Otherwise, enjoy the thrill with our <strong>professional skydiving team</strong>.
+      </p>
+      <p>
+        Each flight includes <strong>3 passengers, 3 instructors, and 1 pilot</strong>. 
+        The jump takes place over the stunning <strong>Paul da Serra plateau</strong>.
+      </p>
+      <p>
+        After landing, a team member will greet you and provide <strong>shuttle service back</strong> to our airport center.
+      </p>
+    </div>
+
+    <div class="schedule-card">
+      <h3>Madeira 360 Aerial Tour – Deluxe Experience</h3>
+      <p>
+        This exclusive tour begins in our <strong>VIP lounge</strong> with unlimited food and drinks, plus a complimentary glass of champagne.
+      </p>
+      <p>
+        Transfer to the airfield is provided in a <strong>BMW i5</strong>.
+      </p>
+      <p>
+        The flight route is customizable upon request. 
+        During the tour, enjoy a <strong>champagne toast</strong> and curated music — or bring your own playlist!
+      </p>
+    </div>
+
+    <div class="schedule-card">
+      <h3>General Rules for All Tours</h3>
+      <ul>
+        <li><strong>Strict rule compliance</strong> is mandatory</li>
+        <li><strong>Mobile phone use is prohibited</strong> during flights</li>
+        <li><strong>Photography is allowed and encouraged</strong></li>
+        <li><strong>Free cancellation</strong> up to 24 hours before departure</li>
+        <li><strong>Cancellation within 3 hours</strong> requires justification</li>
+        <li><strong>Less than 3 hours before departure</strong>: full payment required</li>
+        <li><strong>Punctuality is crucial</strong> — late arrivals may result in cancellation and full charge</li>
+      </ul>
+    </div>
+
+    <!-- Contact block -->
+    <div class="schedule-card text-center">
+      <h3>Questions? Special Requests? Custom Offers?</h3>
+      <p>We’re happy to help — just reach out!</p>
+      <div class="d-flex flex-column align-items-center">
+        <img src="/assets/crew/JacquelineHamilton.jpg" alt="Jacqueline Hamilton" style="width: 120px; height: 120px; border-radius: 12px; object-fit: cover; margin-bottom: 1rem;" />
+        <p><strong>Jacqueline Hamilton</strong><br />Customer Relations</p>
+        <p>
+          📞 <a href="tel:+351912345678">+351 927 654 321</a><br />
+          📧 <a href="mailto:jacqueline@nimbus-x.com">info@nimbus-x.com</a><br />
+          📍 Machico Flight Center - Park Desportivo, 9200-202 Machicoo, Madeira
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<app-footer></app-footer>
+
+
