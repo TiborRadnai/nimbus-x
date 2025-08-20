@@ -55,20 +55,20 @@
   }
 
   .overlay {
-    padding: 1.5rem;
+    padding: 0.5rem;
     font-size: 0.95rem;
   }
 
   .overlay h1 {
-    font-size: 1.8rem;
-  }
-
-  .overlay p {
     font-size: 1rem;
   }
 
+  .overlay p {
+    font-size: 0.5rem;
+  }
+
   .btn-outline-light {
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+    padding: 0.2rem .5rem;
   }
 }

@@ -1,5 +1,5 @@
 <app-hero-section
-  [backgroundImage]="'/assets/bookAFlightHeader.jpg'"
+  [backgroundImage]="'assets/bookAFlightHeader.webp'"
   [title]="'Your journey starts here '"
   [subtitle]="'Choose your route, pick a date, and get ready to soar.'"
   [buttonText]="''"
@@ -37,79 +37,181 @@
   </div>
 
   <!-- Booking Form -->
-  <form class="booking-form neon-box" id="formTop">
-    <h2 class="text-center mb-4">Book Your Flight</h2>    
+<form class="booking-form neon-box" id="formTop" #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <h2 class="text-center mb-4">Book Your Flight</h2>    
 
-    <!-- Route (dropdown) -->
-    <div class="form-group">
-      <label for="route">Selected Route</label>
-      <select
-        id="route"
-        name="route"
-        [(ngModel)]="selectedRouteId"
-        (change)="onRouteChange()"
-        class="form-control"
-        required
-      >
-        <option value="">Choose your flight!</option>
-        <option *ngFor="let route of routesList" [value]="route.id">{{ route.name }}</option>
-      </select>
+  <!-- Route -->
+  <div class="form-group">
+    <label for="route">Selected Route</label>
+    <select
+      id="route"
+      name="route"
+      [(ngModel)]="selectedRouteId"
+      #routeField="ngModel"
+      (change)="onRouteChange()"
+      class="form-control"
+      required
+    >
+      <option value="">Choose your flight!</option>
+      <option *ngFor="let route of routesList" [value]="route.id">{{ route.name }}</option>
+    </select>
+    <div class="text-danger mt-1" *ngIf="routeField.invalid && routeField.touched">
+      <small>Please select a route.</small>
     </div>
+  </div>
 
-    <!-- Passengers -->
-    <div class="form-group">
-      <label for="passengerCount">Number of Passengers</label>
-      <select
-        id="passengerCount"
-        name="passengerCount"
-        [(ngModel)]="passengerCount"
-        [disabled]="!selectedRoute"
-        class="form-control"
-        required
-      >
-        <option *ngIf="!selectedRoute" disabled selected>
-          Please select a route first
-        </option>
-        <option *ngFor="let option of passengerOptions" [value]="option">
-          {{ option }}
-        </option>
-      </select>
+  <!-- Passengers -->
+  <div class="form-group">
+    <label for="passengerCount">Number of Passengers</label>
+    <select
+      id="passengerCount"
+      name="passengerCount"
+      [(ngModel)]="passengerCount"
+      #passengerField="ngModel"
+      [disabled]="!selectedRoute"
+      class="form-control"
+      required
+    >
+      <option *ngIf="!selectedRoute" disabled selected>Please select a route first</option>
+      <option *ngFor="let option of passengerOptions" [value]="option">{{ option }}</option>
+    </select>
+    <div class="text-danger mt-1" *ngIf="passengerField.invalid && passengerField.touched">
+      <small>Please select number of passengers.</small>
     </div>
-    
-    <!-- Date -->
-    <div class="form-group">
-      <label for="date">Select Date</label>
-      <input type="date" id="date" name="date" class="form-control" required />
-    </div>
+  </div>
 
-    <!-- Time -->
-    <div class="form-group">
-      <label for="time">Select Time</label>
-      <select id="time" name="time" class="form-control" required>
-        <option value="">-- Choose a time --</option>
-        <option *ngFor="let slot of availableTimeSlots" [value]="slot">{{ slot }}</option>
-      </select>
+  <!-- Date -->
+  <div class="form-group">
+    <label for="date">Select Date</label>
+    <input
+      type="date"
+      id="date"
+      name="date"
+      [(ngModel)]="selectedDate"
+      #dateField="ngModel"
+      class="form-control"
+      required
+    />
+    <div class="text-danger mt-1" *ngIf="dateField.invalid && dateField.touched">
+      <small>Date is required.</small>
     </div>
+  </div>
 
-    <!-- Contact Info -->
-    <div class="form-group">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" class="form-control" required />
+  <!-- Time -->
+  <div class="form-group">
+    <label for="time">Select Time</label>
+    <select
+      id="time"
+      name="time"
+      [(ngModel)]="selectedTime"
+      #timeField="ngModel"
+      class="form-control"
+      required
+    >
+      <option value="">-- Choose a time --</option>
+      <option *ngFor="let slot of availableTimeSlots" [value]="slot">{{ slot }}</option>
+    </select>
+    <div class="text-danger mt-1" *ngIf="timeField.invalid && timeField.touched">
+      <small>Please select a time.</small>
     </div>
+  </div>
 
-    <div class="form-group">
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="email" class="form-control" required />
+  <!-- Name -->
+  <div class="form-group">
+    <label for="name">Your Name</label>
+    <input 
+      type="text" 
+      id="name" 
+      name="name" 
+      [(ngModel)]="name"
+      #nameField="ngModel" 
+      class="form-control" 
+      required
+    />
+    <div class="text-danger mt-1" *ngIf="nameField.invalid && nameField.touched">
+      <small>Name is required.</small>
     </div>
+  </div>
 
-    <div class="form-group">
-      <label for="phone">Your Phone</label>
-      <input type="tel" id="phone" name="phone" class="form-control" required />
+  <!-- Email -->
+  <div class="form-group">
+    <label for="email">Your Email</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      [(ngModel)]="email"
+      #emailField="ngModel"
+      class="form-control"
+      required
+      email
+      pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+    />
+    <div class="text-danger mt-1" *ngIf="emailField.invalid && emailField.touched">
+      <small *ngIf="emailField.errors?.['required']">Email is required.</small>
+      <small *ngIf="emailField.errors?.['email'] || emailField.errors?.['pattern']">Please enter a valid email address.</small>
     </div>
+  </div>
 
-    <button type="submit" class="booking-button">Book Now</button>
-  </form>
+  <!-- Phone -->
+  <div class="form-group">
+    <label for="phone">Your Phone</label>
+    <input
+      type="tel"
+      id="phone"
+      name="phone"
+      [(ngModel)]="phone"
+      #phoneField="ngModel"
+      class="form-control"
+      required
+      pattern="^[0-9+\s()-]{6,20}$"
+    />
+    <div class="text-danger mt-1" *ngIf="phoneField.invalid && phoneField.touched">
+      <small *ngIf="phoneField.errors?.['required']">Phone number is required.</small>
+      <small *ngIf="phoneField.errors?.['pattern']">Only digits and phone symbols allowed (e.g. +36 30 123 4567).</small>
+    </div>
+  </div>
+
+  <!-- Submit -->
+  <button type="submit" class="booking-button" [disabled]="form.invalid">
+    Book Now
+  </button>
+</form>
+
 </section>
+<!-- Feedback -->
+<div class="modal-backdrop" *ngIf="showModal"></div>
+
+<div class="booking-modal neon-box" *ngIf="showModal">
+  <h2 class="text-center">Thank you for your booking!</h2>
+
+  <p class="text-center mb-3">Your request has been received and is being processed.</p>
+
+  <p class="bookingNumber">Your Booking Number:</p>
+
+
+  <div class="booking-code-box">
+    <span class="booking-code">{{ bookingNumber }}</span>
+  </div>
+
+  <div class="booking-details">
+    <p><strong>Route:</strong> {{ selectedRouteName }}</p>
+    <p><strong>Passengers:</strong> {{ passengerCount }}</p>
+    <p><strong>Date:</strong> {{ selectedDate }}</p>
+    <p><strong>Time:</strong> {{ selectedTime }}</p>
+    <p><strong>Name:</strong> {{ name }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Phone:</strong> {{ phone }}</p>
+  </div>
+
+  <p class="mt-3 text-center">
+    One of our team members will contact you shortly.<br />
+    If you have any questions, feel free to reach out via one of our contact channels.
+  </p>
+
+  <button class="booking-button mt-4" (click)="closeModal()">Close</button>
+</div>
+
 
 <section class="booking-section my-5">
   <div class="neon-box">
@@ -198,7 +300,7 @@
       <h3>Questions? Special Requests? Custom Offers?</h3>
       <p>We’re happy to help — just reach out!</p>
       <div class="d-flex flex-column align-items-center">
-        <img src="/assets/crew/JacquelineHamilton.jpg" alt="Jacqueline Hamilton" style="width: 120px; height: 120px; border-radius: 12px; object-fit: cover; margin-bottom: 1rem;" />
+        <img src="assets/crew/JacquelineHamilton.webp" alt="Jacqueline Hamilton" style="width: 120px; height: 120px; border-radius: 12px; object-fit: cover; margin-bottom: 1rem;" />
         <p><strong>Jacqueline Hamilton</strong><br />Customer Relations</p>
         <p>
           📞 <a href="tel:+351912345678">+351 927 654 321</a><br />

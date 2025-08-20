@@ -5,6 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 import { HeroSectionComponent } from '../hero-section/hero-section.component';
 import { PageTitleComponent } from '../page-title/page-title.component';
 import { FooterComponent } from '../footer/footer.component';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-booking',
@@ -128,4 +130,36 @@ ngOnInit(): void {
   getAvailableSeats(time: string): number {
     return Math.floor(Math.random() * (this.selectedRoute?.maxPassengers || 4));
   }
+
+  generateBookingNumber(): string {
+  const digits = Array.from({ length: 9 }, () => Math.floor(Math.random() * 10));
+  return `${digits.slice(0, 3).join('')} ${digits.slice(3, 6).join('')} ${digits.slice(6).join('')}`;
+  }
+  showModal = false;
+  bookingNumber = '';
+  selectedRouteName = '';
+  selectedDate = '';
+  selectedTime = '';
+  name = '';
+  email = '';
+  phone = '';
+
+  onSubmit(form: NgForm) {
+    if (form.valid) {
+      this.bookingNumber = this.generateBookingNumber();
+      this.selectedRouteName = this.routesList.find(r => r.id === this.selectedRouteId)?.name || '';
+      this.selectedDate = form.value.date;
+      this.selectedTime = form.value.time;
+      this.name = form.value.name;
+      this.email = form.value.email;
+      this.phone = form.value.phone;
+
+      this.showModal = true;
+    }
+  }
+
+  closeModal() {
+    this.showModal = false;
+  }
+
 }

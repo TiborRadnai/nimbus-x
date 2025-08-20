@@ -24,15 +24,19 @@
   height: auto;
   z-index: 1000;
   color: #ffffff;
-  max-height: 95vh; /* vagy 90vh, ahogy kényelmes */
+  max-height: 95dvh;
   overflow-y: auto;
-  padding-right: 1rem; /* hogy ne vágja le a scrollbar */
 }
 
-@media (max-width:993px) {
+@media (max-width: 993px) {
   .modal-container {
-    top: 10%;
+    padding: 1rem;
+    z-index: 9999;
   }
+}
+
+.modal-container p {
+  text-align: justify;
 }
 
 .modal-image {
@@ -49,6 +53,7 @@
 }
 
 .modal-description {
+  text-align: justify;    
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 1.5rem;
@@ -109,6 +114,8 @@
 }
 
 .modal-container.premium {
+  top: 0;
+  left: 50%;
   position: fixed;
   gap: 2rem;
   background-color: #111;
@@ -119,6 +126,9 @@
   margin-bottom: 4rem;  
   border: 2px solid gold;
   box-shadow: 0 0 30px gold;
+  max-height: 95dvh; /* vagy 90vh, ahogy kényelmes */
+  overflow-y: auto;
+  padding-right: 1rem; /* hogy ne vágja le a scrollbar */
 }
 
 .modal-container.premium .book-button {
