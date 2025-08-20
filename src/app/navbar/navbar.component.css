@@ -2,8 +2,10 @@
   background-color: #0a0f1c;
   border-bottom: 2px solid #00ffff33;
   font-family: 'Orbitron', sans-serif;
-  
-}
+  position: sticky;
+  top: 0;
+  z-index: 10; /* vagy 100, de ne legyen 1000+ */}
+
 
 .navbar-brand {
   color: #00ffff;
@@ -38,5 +40,9 @@
   .nav-link{
     padding-left: 0 !important;
     text-align: center;
+  }
+
+  .navbar {
+    z-index: 1 !important;
   }
 }
